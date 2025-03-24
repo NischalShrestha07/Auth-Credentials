@@ -1,0 +1,21 @@
+.body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    height: 350px;
+}
+#loginFailedAlert {
+    position: fixed;
+    top: 20px;   /* Adjust the distance from the top */
+    right: 20px; /* Adjust the distance from the right */
+    z-index: 1050; /* Ensures the alert stays on top */
+}
