@@ -23,14 +23,14 @@ Route::middleware(['CheckUser'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // // Category Routes (Fixed Naming Conflict)
-    // Route::prefix('category')->group(function () {
-    //     Route::get('/', [CategoryController::class, 'index'])->name('category.index');
-    //     Route::get('/create', [CategoryController::class, 'create'])->name('category.create');
-    //     // Route::post('/store', [CategoryController::class, 'store'])->name('category.store');
-    //     Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
-    //     Route::put('/update/{category}', [CategoryController::class, 'update'])->name('category.update');
-    //     Route::delete('/delete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
-    // });
+    Route::prefix('category')->group(function () {
+        Route::get('/index', [CategoryController::class, 'index'])->name('category');
+        Route::get('/create', [CategoryController::class, 'create'])->name('category.create');
+        Route::post('/store', [CategoryController::class, 'store'])->name('category.store');
+        Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+        Route::put('/update/{category}', [CategoryController::class, 'update'])->name('category.update');
+        Route::delete('/delete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
+    });
 
 
 
@@ -38,7 +38,7 @@ Route::middleware(['CheckUser'])->group(function () {
     Route::get('/subcategory/create', [SubCategoryController::class, 'create'])->name('subcategory.create');
     Route::post('/subcategory/store', [SubCategoryController::class, 'store'])->name('subcategory.store');
     Route::get('/subcategory/edit/{id}', [SubCategoryController::class, 'edit'])->name('subcategory.edit');
-    Route::put('/subcategory/update/{id}', [SubCategoryController::class, 'update'])->name('subcategory.update');
+    Route::put('/subcategory/update/{id}', [SubCategoryController::class, 'update'])->name('subcategory.updates');
     Route::delete('/subcategory/delete/{id}', [SubCategoryController::class, 'destroy'])->name('subcategory.delete');
 
     Route::get('/product', [ProductController::class, 'index'])->name('product');
