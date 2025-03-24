@@ -9,6 +9,6 @@
 <x-alert type="success" message="{{ session('success') }}" />
 @endsession
 <div class="container">
-    HEllo OWredfb
+
 </div>
 @endsection
